@@ -18,7 +18,8 @@ class CurrencyController extends Controller
         $prevRate = $this->getRates($prevDate, $currencyCode, $baseCurrencyCode);
 
         $difference = $rate - $prevRate;
-        echo "Difference with previous trading day: $difference".PHP_EOL;
+        echo "Difference for $currencyCode - $baseCurrencyCode on date ($date) with previous trading day ($prevDate) = $difference".PHP_EOL;
+        echo "Result ".PHP_EOL."Pair: $currencyCode - $baseCurrencyCode ".PHP_EOL."($date): $rate ".PHP_EOL."($prevDate): $prevRate ".PHP_EOL."Difference: $difference".PHP_EOL;
 
         return ExitCode::OK;
     }
